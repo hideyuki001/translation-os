@@ -81,6 +81,7 @@ YES / NO
 TRUE / FALSE
 
 These binary judgments function as a quality gate that determines whether the pipeline should proceed or trigger refinement.
+
 ---
 
 ## 🧪 Counter-Evidence System
