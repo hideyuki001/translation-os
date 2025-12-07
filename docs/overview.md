@@ -149,7 +149,7 @@ This enables stable, predictable, production-grade translations.
 
 ---
 
-## 🌐 7. Integration & API Usage”
+## 🌐 7. Integration & API Usage
 
 Translation OS exposes five minimal REST endpoints:
 
