@@ -1,4 +1,5 @@
 # Unified Translation OS — Language-Agnostic Core
+A reproducible, structure-driven translation & QA operating system.
 
 **Version:** 1.0  
 **Author:** Hideyuki Okabe  
