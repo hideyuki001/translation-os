@@ -113,11 +113,12 @@ Every correction must include evidence lines:
 
 Translation OS exposes 5 minimal REST endpoints:
 
-POST /v1/semantic-core
-POST /v1/structure-remap
-POST /v1/evaluate
-POST /v1/refine
+POST /v1/semantic-core  
+POST /v1/structure-remap  
+POST /v1/evaluate  
+POST /v1/refine  
 POST /v1/deltaS
+
 
 
 See: `/api/endpoints.md` and `/api/openapi.yml`
