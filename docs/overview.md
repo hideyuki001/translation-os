@@ -106,24 +106,32 @@ Translation OS evaluates outputs through:
 
 ### **Unified Scoring Matrix**
 
-- Semantic Fidelity  
-- Structural Flow  
-- Lexical Precision  
-- Cultural Adaptation  
-- Reader Resonance  
+| Metric              | Weight |
+|---------------------|--------|
+| Semantic Fidelity   | 0.30   |
+| Structural Flow     | 0.20   |
+| Lexical Precision   | 0.15   |
+| Cultural Adaptation | 0.20   |
+| Reader Resonance    | 0.15   |
+
+These weights reflect how Translation OS prioritizes meaning accuracy, structural logic, cultural fit, and user experience.
+
+---
 
 ### **META Evaluation Layer**
 
 Binary outputs:
 
-- YES / NO  
-- TRUE / FALSE  
+- **YES / NO**
+- **TRUE / FALSE**
 
 **Function:**
 
 - Quality gates between phases  
 - Stops or continues the pipeline  
 - Detects structural or semantic violations  
+
+---
 
 ### **Counter-Evidence System**
 
@@ -135,7 +143,6 @@ Each correction must include at least one:
 - Pragmatic mismatch  
 - Cultural unsuitability  
 
----
 
 ## 🔁 6. Recursive Refinement Engine (ΔS Control)
 
