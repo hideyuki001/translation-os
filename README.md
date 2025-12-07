@@ -1,4 +1,4 @@
-# Unified Translation OS — Language-Agnostic Core
+# Translation OS — Language-Agnostic Core
 A reproducible, structure-driven translation & QA operating system.
 
 **Version:** 1.0  
@@ -15,7 +15,7 @@ Unlike conventional translation approaches based on intuition or word substituti
 
 **“Semantic + Pragmatic + Cultural Structure Mapping”**
 
-This repository publishes the complete Language-Agnostic Core, extracted from the Unified Translation OS master specification.
+This repository publishes the complete Language-Agnostic Core, extracted from the Translation OS master specification.
 
 ---
 
