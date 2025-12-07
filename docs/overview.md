@@ -1,5 +1,7 @@
 # Overview — Translation OS (Language-Agnostic Core)
 
+TL;DR — Translation OS is a structure-first translation & QA operating system that guarantees reproducibility, semantic fidelity, and deterministic evaluation across languages.
+
 Translation OS is a structure-driven, language-agnostic translation and QA operating system designed to create reproducible, evidence-based, and culturally aligned translations in any domain.
 
 This overview provides a conceptual map of the system:  
