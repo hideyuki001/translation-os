@@ -75,7 +75,7 @@ Stress-tests output stability, drift, and cultural alignment.
 See `/docs/architecture.md` for details.
 
 ---
-# ✅ 1. System Architecture Diagram（7-Layer Unified Model）
+## ✅ 1. System Architecture Diagram（7-Layer Unified Model）
 ```mermaid
 flowchart TD
 
@@ -98,7 +98,7 @@ flowchart TD
 
 ---
 
-# ✅ **2. 6-Phase Translation Pipeline Diagram**
+## ✅ **2. 6-Phase Translation Pipeline Diagram**
 
 ```mermaid
 flowchart LR
@@ -116,7 +116,7 @@ flowchart LR
 
 ---
 
-# ✅ **3. Evaluation Flow Diagram（META + ΔS Control）**
+## ✅ **3. Evaluation Flow Diagram（META + ΔS Control）**
 
 ```mermaid
 flowchart TD
