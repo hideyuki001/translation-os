@@ -31,6 +31,65 @@ This repository publishes the complete Language-Agnostic Core, extracted from th
 - ΔS (structural entropy) must decrease after refinement  
 
 ---
+## 🧩 Cultural / Cognitive Layer (Human-in-the-Loop)
+### with the “Japanese Omakase Logic” Metaphor
+
+Translation OS separates translation reasoning into three layers:
+
+### **1. Semantic Nucleus Layer — fully automated**
+Extracts invariant meaning components from the source text.
+
+### **2. Structural Mapping Layer — fully automated**
+Reconstructs the logical, temporal, and pragmatic structure in the target language.
+
+### **3. Cultural / Cognitive Layer — semi-automated**
+Handles cultural fit, high-context reasoning, politeness systems, social meaning, and audience norms.
+
+Only Layers **1** and **2** are integrated into the Translation OS API.  
+Layer **3** is intentionally **not** fully automated.
+
+---
+
+### ⭐ Why? — “Japanese Omakase Logic”
+
+To help non-Japanese engineers understand this decision,  
+Translation OS uses the metaphor of **Japanese Omakase Logic**.
+
+In an *omakase* meal, the chef adjusts:
+
+- flavor  
+- temperature  
+- timing  
+- sequence  
+- emotional experience  
+
+based on subtle, unspoken signals from the customer.
+
+This dynamic adjustment **cannot be fully automated**.  
+It is a **human–human cognitive loop**, guided by culture, empathy, and context.
+
+Translation OS applies the same principle:
+
+- **Semantic + structural layers → machine-automatable**  
+- **Cultural layer → requires joint reasoning between human and AI**
+
+Therefore:
+
+> **Translation OS does not attempt to fully automate cultural judgement.  
+> Instead, it provides the structural foundation upon which human cultural reasoning can operate.**
+
+This design makes Translation OS a **real operating system**,  
+not merely a translation model or prompt library.
+
+---
+
+### 🔍 Summary
+
+- **Layers 1 & 2** → deterministic, automatable → processed by the OS  
+- **Layer 3** → cultural cognition → remains a *Human-in-the-loop* extension  
+- Avoids false claims of “full automation”  
+- Highlights the unique strengths of Translation OS — **structural abstraction and cultural co-creation**
+
 
 ## 🏗 Architecture Overview
 
