@@ -75,6 +75,65 @@ Stress-tests output stability, drift, and cultural alignment.
 See `/docs/architecture.md` for details.
 
 ---
+# ✅ 1. System Architecture Diagram（7-Layer Unified Model）
+```mermaid
+flowchart TD
+
+    A[Philosophical Core<br/>Epistemology of Meaning & Structure]
+
+    B[Structural Engine<br/>Semantic Extraction / Mapping / Optimization]
+
+    C[6-Phase Translation Pipeline<br/>Semantic → Structure → Syntax → META → ΔS → Culture]
+
+    D[Unified Scoring Matrix<br/>Semantic / Structural / Cultural / Lexical / Reader]
+
+    E[FPE & Counter-Evidence System<br/>Error → Evidence → Correction]
+
+    F[Recursive Improvement Engine<br/>ΔS-Based Refinement Loop]
+
+    G[QA Testing Framework<br/>Stability / Drift / Cultural Checks]
+
+    A --> B --> C --> D --> E --> F --> G
+```
+
+---
+
+# ✅ **2. 6-Phase Translation Pipeline Diagram**
+
+```mermaid
+flowchart LR
+
+    A[1. Semantic Core Extraction<br/>Meaning Nucleus]
+    B[2. Structural Mapping<br/>Logical / Temporal / Pragmatic]
+    C[3. Syntactic Optimization<br/>Surface Reconstruction]
+    D[4. META Evaluation<br/>YES/NO/TRUE/FALSE]
+    E[5. Recursive Refinement<br/>ΔS Reduction]
+    F[6. Naturalness & Cultural Verification<br/>Reader Resonance]
+
+    A --> B --> C --> D --> E --> F
+```
+
+
+---
+
+# ✅ **3. Evaluation Flow Diagram（META + ΔS Control）**
+
+```mermaid
+flowchart TD
+
+    A[Input Translation]
+    B[Unified Scoring Matrix<br/>5 Metrics Weighed]
+    C[META Evaluation<br/>Binary Decision<br/>YES/NO/TRUE/FALSE]
+    D{Pass?}
+    E[Refinement Engine<br/>Shorten / Strengthen / Reduce ΔS]
+    F[ΔS Measurement<br/>Structural Entropy]
+    G[Final Output<br/>Stable / Culturally Aligned]
+
+    A --> B --> C --> D
+    D -- YES --> G
+    D -- NO --> E --> F --> C
+
+```
 
 ## 🔄 4. 6-Phase Translation Pipeline (Summary)
 
