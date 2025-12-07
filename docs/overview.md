@@ -23,6 +23,8 @@ Translation OS solves this by introducing a unified structural framework that go
 **Mission:**  
 Enable reproducible, structurally consistent, culturally safe, and evaluation-ready translations across languages.
 
+⭐ “Translation OS provides deterministic, explainable translation decisions — independent of model, language, or reviewer.”
+
 ---
 
 ## 🧠 2. Design Philosophy
