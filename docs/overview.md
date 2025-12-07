@@ -151,12 +151,11 @@ This enables stable, predictable, production-grade translations.
 
 Translation OS exposes five minimal REST endpoints:
 
-POST /v1/semantic-core
-POST /v1/structure-remap
-POST /v1/evaluate
-POST /v1/refine
-POST /v1/deltaS
-
+- POST /v1/semantic-core
+- POST /v1/structure-remap
+- POST /v1/evaluate
+- POST /v1/refine
+- POST /v1/deltaS
 
 These allow integration into:
 
