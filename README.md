@@ -70,8 +70,16 @@ See: `/docs/pipeline.md`
 | Cultural Adaptation | 0.20   |
 | Reader Resonance    | 0.15   |
 
-**META判定方式：YES / NO / TRUE / FALSE**
+**META Evaluation Method: YES / NO / TRUE / FALSE**
+The META Evaluation Layer performs a binary meta-level quality check to ensure that each translation stage maintains semantic fidelity and structural consistency.
 
+Output Types:
+
+YES / NO
+
+TRUE / FALSE
+
+These binary judgments function as a quality gate that determines whether the pipeline should proceed or trigger refinement.
 ---
 
 ## 🧪 Counter-Evidence System
