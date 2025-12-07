@@ -153,6 +153,3 @@ MIT License (recommended for OSS + enterprise adoption)
 
 For enterprise use / PoC / collaboration inquiries:  
 LinkedIn: **Hideyuki Okabe**
-
-Translation OS exposes 5 minimal REST endpoints:
-
