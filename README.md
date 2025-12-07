@@ -115,6 +115,7 @@ See: `/api/endpoints.md` and `/api/openapi.yml`
 
 ## 📂 Folder Structure
 
+```
 translation-os/
 ├─ README.md
 ├─ docs/
@@ -127,7 +128,7 @@ translation-os/
 │ └─ examples/
 └─ src/
 └─ translation_os_core/
-
+```
 ---
 
 ## 📄 License
