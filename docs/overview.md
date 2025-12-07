@@ -2,9 +2,9 @@
 
 TL;DR — Translation OS is a structure-first translation & QA operating system that guarantees reproducibility, semantic fidelity, and deterministic evaluation across languages.
 
-Translation OS is a structure-driven, language-agnostic translation and QA operating system designed to create reproducible, evidence-based, and culturally aligned translations in any domain.
+Translation OS is a structure-driven, language-agnostic translation and QA operating system that standardizes how meaning is extracted, evaluated, and refined — enabling reproducible, evidence-based, and culturally aligned translations across all languages and models.
 
-This overview provides a conceptual map of the system:  
+This overview provides a conceptual map of the system:
 its purpose, design philosophy, high-level architecture, and usage.
 
 ---
