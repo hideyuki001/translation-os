@@ -71,6 +71,7 @@ See: `/docs/pipeline.md`
 | Reader Resonance    | 0.15   |
 
 **META Evaluation Method: YES / NO / TRUE / FALSE**
+
 The META Evaluation Layer performs a binary meta-level quality check to ensure that each translation stage maintains semantic fidelity and structural consistency.
 
 Output Types:
