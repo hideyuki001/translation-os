@@ -94,10 +94,10 @@ Details are available in /docs/architecture.md.
 ```mermaid
 flowchart TD
     A[1. Philosophical Core] --> B[2. Structural Engine]
-    B --> C[3. 6-Phase Translation Pipeline]
+    B --> C[3. Six-Phase Translation Pipeline]
     C --> D[4. Unified Scoring Matrix]
     D --> E[5. FPE & Counter-Evidence System]
-    E --> F[6. Recursive Improvement Engine (ΔS Control)]
+    E --> F[6. Recursive Improvement Engine - Delta S Control]
     F --> G[7. QA Testing Framework]
 ```
 
