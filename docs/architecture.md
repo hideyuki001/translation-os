@@ -163,45 +163,45 @@ This layer guarantees that Translation OS can be deployed in enterprise-grade lo
 ---
 
 # **3\. System Diagram — 7-Layer Unified Architecture**
-
+```mermaid
 `flowchart TD`  
     `A[1. Philosophical Core] --> B[2. Structural Engine]`  
     `B --> C[3. Six-Phase Translation Pipeline]`  
     `C --> D[4. Unified Scoring Matrix]`  
     `D --> E[5. FPE & Counter-Evidence System]`  
-    `E --> F[6. Recursive Improvement Engine - ΔS Control]`  
+    `E --> F[6. Recursive Improvement Engine - Delta S Control]`  
     `F --> G[7. QA Testing Framework]`
-
+```
 ---
 
 # **4\. Diagram — Six-Phase Pipeline**
-
+```mermaid
 `flowchart TD`  
     `A[1. Semantic Core Extraction] --> B[2. Structural Mapping]`  
     `B --> C[3. Syntactic Optimization]`  
     `C --> D{4. META Evaluation YES or NO}`
 
     `D -- YES --> F[6. Naturalness & Cultural Verification]`  
-    `D -- NO --> E[5. Recursive Refinement - ΔS Control]`
+    `D -- NO --> E[5. Recursive Refinement - Delta S Control]`
 
     `E --> D`  
     `F --> G[Final Output]`
-
+```
 ---
 
 # **5\. META Evaluation Logic**
-
+```mermaid
 `flowchart TD`  
     `A[Candidate Output] --> B[META Evaluation Gate]`
 
     `B -->|YES| C[Proceed]`  
     `B -->|NO| D[Trigger Refinement]`
 
-    `D --> E[Refine - strengthen / shorten / lower ΔS]`  
+    `D --> E[Refine - strengthen / shorten / lower Delta S]`  
     `E --> B`
 
     `C --> F[Final Stabilized Output]`
-
+```
 ---
 
 # **6\. Interaction Between Layers**
