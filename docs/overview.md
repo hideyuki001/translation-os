@@ -1,273 +1,288 @@
-# Overview — Translation OS (Language-Agnostic Core)
+# **Overview — Translation OS (Language-Agnostic Core)**
 
-TL;DR — Translation OS is a structure-first translation & QA operating system that guarantees reproducibility, semantic fidelity, and deterministic evaluation across languages.
+**TL;DR — Translation OS is a structure-first translation & QA operating system that guarantees reproducibility, semantic fidelity, and deterministic evaluation across languages.**
 
-Translation OS is a structure-driven, language-agnostic translation and QA operating system that standardizes how meaning is extracted, evaluated, and refined — enabling reproducible, evidence-based, and culturally aligned translations across all languages and models.
+Translation OS standardizes how meaning is extracted, mapped, evaluated, and refined — enabling **reproducible, evidence-based, culturally aligned** translations across all languages and models.
 
-This overview provides a conceptual map of the system:
-its purpose, design philosophy, high-level architecture, and usage.
-
----
-
-## 🔥 1. Purpose of Translation OS
-
-Modern translation workflows suffer from:
-
-- inconsistency  
-- intuition-based decision making  
-- unstable MT output  
-- lack of structural reasoning  
-- limited cultural adequacy  
-- no objective evaluation signals  
-
-Translation OS solves this by introducing a unified structural framework that governs how meaning is extracted, mapped, evaluated, and refined.
-
-**Mission:**  
-Enable reproducible, structurally consistent, culturally safe, and evaluation-ready translations across languages.
-
-⭐ “Translation OS provides deterministic, explainable translation decisions — independent of model, language, or reviewer.”
+This document provides the conceptual overview: **purpose, philosophy, system architecture, and workflow diagrams.**
 
 ---
 
-## 🧠 2. Design Philosophy
+# **🔥 1\. Purpose of Translation OS**
 
-Translation OS is built on 7 foundational beliefs:
+Modern translation suffers from:
 
-- Translation is not surface substitution  
-- Meaning = structure, not vocabulary  
-- Semantic nucleus must be extracted first  
-- Context & pragmatics override lexical choices  
-- Every correction must include evidence  
-- Evaluation must be deterministic (META layer)  
-- ΔS (structural entropy) must decrease over time  
+* inconsistent quality
 
-In short:
+* intuition-based decisions
 
-**“Translation = Semantic + Pragmatic + Cultural Structure Mapping”**
+* unstable MT output
 
----
+* missing structural reasoning
 
-## 🏗 3. System Architecture (High-Level)
+* limited cultural adequacy
 
-Translation OS contains 7 unified layers:
+* lack of objective evaluation signals
 
-### **Philosophical Core**  
-Defines epistemology of meaning and structure.
+**Translation OS solves this** with a unified structural framework that governs:
 
-### **Structural Engine**  
-Performs semantic extraction, mapping, and optimization.
+* how meaning is extracted
 
-### **6-Phase Translation Pipeline**  
-Provides reproducible processing stages.
+* how structure is mapped
 
-### **Unified Scoring Matrix**  
-Quantifies translation quality (semantic, structural, cultural, lexical).
+* how drift is detected
 
-### **FPE & Counter-Evidence System**  
-Error detection with justification.
+* how evaluation is done
 
-### **Recursive Improvement Engine**  
-ΔS-controlled refinement loop.
+* how refinement converges
 
-### **QA Testing Framework**  
-Stress-tests output stability, drift, and cultural alignment.
+### **Mission**
 
-See `/docs/architecture.md` for details.
+Enable **reproducible**, **structurally consistent**, **culturally safe**, and **evaluation-ready** translations across languages.
 
----
-## ✅ 1. System Architecture Diagram（7-Layer Unified Model）
-```mermaid
-flowchart TD
-
-    A[Philosophical Core<br/>Epistemology of Meaning & Structure]
-
-    B[Structural Engine<br/>Semantic Extraction / Mapping / Optimization]
-
-    C[6-Phase Translation Pipeline<br/>Semantic → Structure → Syntax → META → ΔS → Culture]
-
-    D[Unified Scoring Matrix<br/>Semantic / Structural / Cultural / Lexical / Reader]
-
-    E[FPE & Counter-Evidence System<br/>Error → Evidence → Correction]
-
-    F[Recursive Improvement Engine<br/>ΔS-Based Refinement Loop]
-
-    G[QA Testing Framework<br/>Stability / Drift / Cultural Checks]
-
-    A --> B --> C --> D --> E --> F --> G
-```
+⭐ **“Translation OS provides deterministic, explainable translation decisions — independent of model, language, or reviewer.”**
 
 ---
 
-## ✅ **2. 6-Phase Translation Pipeline Diagram**
+# **🧠 2\. Design Philosophy**
 
-```mermaid
-flowchart LR
+Translation OS is built on 7 core principles:
 
-    A[1. Semantic Core Extraction<br/>Meaning Nucleus]
-    B[2. Structural Mapping<br/>Logical / Temporal / Pragmatic]
-    C[3. Syntactic Optimization<br/>Surface Reconstruction]
-    D[4. META Evaluation<br/>YES/NO/TRUE/FALSE]
-    E[5. Recursive Refinement<br/>ΔS Reduction]
-    F[6. Naturalness & Cultural Verification<br/>Reader Resonance]
+1. Translation is not surface substitution
 
-    A --> B --> C --> D --> E --> F
-```
+2. Meaning \= structure, not vocabulary
 
+3. Semantic nucleus must be extracted first
 
----
+4. Context & pragmatics override lexical choices
 
-## ✅ **3. Evaluation Flow Diagram（META + ΔS Control）**
+5. Every correction must include evidence
 
-```mermaid
-flowchart TD
+6. Evaluation must be deterministic (META layer)
 
-    A[Input Translation]
-    B[Unified Scoring Matrix<br/>5 Metrics Weighed]
-    C[META Evaluation<br/>Binary Decision<br/>YES/NO/TRUE/FALSE]
-    D{Pass?}
-    E[Refinement Engine<br/>Shorten / Strengthen / Reduce ΔS]
-    F[ΔS Measurement<br/>Structural Entropy]
-    G[Final Output<br/>Stable / Culturally Aligned]
+7. ΔS (structural entropy) must decrease over time
 
-    A --> B --> C --> D
-    D -- YES --> G
-    D -- NO --> E --> F --> C
+In formula:
 
-```
-
-## 🔄 4. 6-Phase Translation Pipeline (Summary)
-
-### **Semantic Core Extraction**  
-Identify the meaning nucleus.
-
-### **Structural Mapping**  
-Align logical, temporal, and pragmatic structure.
-
-### **Syntactic Optimization**  
-Rebuild surface form based on structure.
-
-### **META Evaluation**  
-Binary judgment (YES/NO/TRUE/FALSE).
-
-### **Recursive Refinement (ΔS-based)**  
-Strengthen → shorten → stabilize.
-
-### **Naturalness & Cultural Verification**  
-Validate reader resonance and cultural fit.
-
-See `/docs/pipeline.md` for full descriptions.
+`Translation = Semantic + Pragmatic + Cultural Structure Mapping`
 
 ---
 
-## 📏 5. Evaluation Principles
+# **🏗 3\. System Architecture (High-Level)**
 
-Translation OS evaluates outputs through:
+Translation OS contains **7 unified layers**:
+
+1. **Philosophical Core**
+
+2. **Structural Engine**
+
+3. **6-Phase Translation Pipeline**
+
+4. **Unified Scoring Matrix**
+
+5. **FPE & Counter-Evidence System**
+
+6. **Recursive Improvement Engine (ΔS)**
+
+7. **QA Testing Framework**
+
+詳細は `/docs/architecture.md`。
+
+---
+
+## **✅ Diagram 1: 7-Layer Unified System**
+
+（ここに `diagrams/architecture-7-layer.png` を置く想定）
+
+`+------------------------------+`  
+`| 7. QA Testing Framework      |`  
+`+------------------------------+`  
+`| 6. Recursive Improvement     |`  
+`|        (ΔS Control)          |`  
+`+------------------------------+`  
+`| 5. FPE & Counter-Evidence    |`  
+`+------------------------------+`  
+`| 4. Unified Scoring Matrix    |`  
+`+------------------------------+`  
+`| 3. 6-Phase Translation Pipe  |`  
+`+------------------------------+`  
+`| 2. Structural Engine         |`  
+`+------------------------------+`  
+`| 1. Philosophical Core        |`  
+`+------------------------------+`
+
+---
+
+# **🔄 4\. 6-Phase Translation Pipeline (Summary)**
+
+1. **Semantic Core Extraction**
+
+2. **Structural Mapping**
+
+3. **Syntactic Optimization**
+
+4. **META Evaluation (YES/NO/TRUE/FALSE)**
+
+5. **Recursive Refinement（ΔS-based）**
+
+6. **Naturalness & Cultural Verification**
+
+---
+
+## **✅ Diagram 2: 6-Phase Pipeline**
+
+（`diagrams/pipeline-6-phase.png` を配置予定）
+
+`[1 Semantic Core]`   
+        `↓`  
+`[2 Structure Map]`  
+        `↓`  
+`[3 Syntax Optimize]`  
+        `↓`  
+`[4 META Evaluation]`  
+   `YES → go forward`  
+   `NO  → refine`  
+        `↓`  
+`[5 ΔS Refinement Loop]`  
+        `↓`  
+`[6 Cultural Verification]`
+
+---
+
+# **📏 5\. Evaluation Principles**
 
 ### **Unified Scoring Matrix**
 
-| Metric              | Weight |
-|---------------------|--------|
-| Semantic Fidelity   | 0.30   |
-| Structural Flow     | 0.20   |
-| Lexical Precision   | 0.15   |
-| Cultural Adaptation | 0.20   |
-| Reader Resonance    | 0.15   |
-
-These weights reflect how Translation OS prioritizes meaning accuracy, structural logic, cultural fit, and user experience.
+| Metric | Weight |
+| ----- | ----- |
+| Semantic Fidelity | 0.30 |
+| Structural Flow | 0.20 |
+| Lexical Precision | 0.15 |
+| Cultural Adaptation | 0.20 |
+| Reader Resonance | 0.15 |
 
 ---
 
 ### **META Evaluation Layer**
 
-Binary outputs:
+Binary judgments:
 
-- **YES / NO**
-- **TRUE / FALSE**
+* **YES / NO**
 
-**Function:**
+* **TRUE / FALSE**
 
-- Quality gates between phases  
-- Stops or continues the pipeline  
-- Detects structural or semantic violations  
+Purpose:
+
+* Acts as a **quality gate**
+
+* Prevents structural violations
+
+* Blocks meaning drift
+
+* Forces deterministic decision-making
 
 ---
 
 ### **Counter-Evidence System**
 
-Each correction must include at least one:
+Every correction must justify itself using one or more:
 
-- Structural contradiction  
-- Meaning drift  
-- Lexical misuse  
-- Pragmatic mismatch  
-- Cultural unsuitability  
+* Structural contradiction
 
+* Meaning drift
 
-## 🔁 6. Recursive Refinement Engine (ΔS Control)
+* Lexical misuse
 
-**Refinement Rules:**
+* Pragmatic mismatch
 
-- Shorten & strengthen output  
-- Remove redundancy  
-- Lower structural entropy (ΔS)  
-- Stabilize meaning across iterations  
-- Re-run META evaluation until the output converges  
+* Cultural unsuitability
 
-This enables stable, predictable, production-grade translations.
+This makes Translation OS **fully auditable**.
 
 ---
 
-## 🌐 7. Integration & API Usage
+# **🔁 6\. Recursive Improvement Engine（ΔS Control）**
 
-Translation OS exposes five minimal REST endpoints:
+Refinement rules:
 
-- POST /v1/semantic-core
-- POST /v1/structure-remap
-- POST /v1/evaluate
-- POST /v1/refine
-- POST /v1/deltaS
+* Shorten & strengthen
 
-These allow integration into:
+* Remove redundancy
 
-- MT pipelines  
-- LQA workflows  
-- Enterprise QA automation  
-- GenAI translation evaluation systems  
+* Reduce ΔS
 
-See `/api/endpoints.md` for specifics.
+* Stabilize structure
+
+* Re-run META evaluation
+
+This loop ensures **stable, converged, production-grade outputs**.
 
 ---
 
-## 🧩 8. Intended Audience
+# **🌐 7\. Integration & API Usage**
 
-Translation OS is designed for:
+Translation OS provides 5 minimal REST endpoints:
 
-- LSPs (Localization Service Providers)  
-- Translation engineers  
-- AI/LLM evaluation teams  
-- MTPE specialists  
-- Enterprise translation teams  
-- Researchers working on structure-based translation  
+`POST /v1/semantic-core`  
+`POST /v1/structure-remap`  
+`POST /v1/evaluate`  
+`POST /v1/refine`  
+`POST /v1/deltaS`
 
----
+Designed for:
 
-## 🚀 9. Why Translation OS Matters
+* MT pipelines
 
-Translation OS achieves what traditional MT or human-only workflows cannot:
+* LQA automation
 
-- reproducible structural reasoning  
-- objective evaluation signals  
-- guaranteed reduction of entropy  
-- explainable corrections with evidence  
-- language-agnostic design (English ⇄ Japanese ⇄ Chinese ⇄ etc.)  
-- plug-and-play API suitability  
+* Enterprise QA audit systems
 
-It represents the next generation of translation frameworks:  
-**“Structure-first translation engineering.”**
+* LLM alignment workflows
+
+詳細: `/api/endpoints.md`
 
 ---
 
-## 📩 Contact
+# **🧩 8\. Intended Audience**
+
+* LSPs
+
+* Translation engineers
+
+* AI evaluation teams
+
+* MTPE specialists
+
+* Enterprise localization groups
+
+* Structure-based translation researchers
+
+---
+
+# **🚀 9\. Why Translation OS Matters**
+
+Translation OS delivers:
+
+* reproducible structural reasoning
+
+* objective evaluation signals
+
+* guaranteed ΔS reduction
+
+* explainable corrections
+
+* language-agnostic design
+
+* plug-and-play enterprise APIs
+
+It represents the next generation of translation engineering:
+
+**“Structure-first translation OS.”**
+
+---
+
+# **📩 Contact**
 
 For enterprise collaboration or PoC inquiries:  
-LinkedIn: **Hideyuki Okabe**
+ **LinkedIn: Hideyuki Okabe**
+
