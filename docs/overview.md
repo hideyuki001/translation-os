@@ -99,10 +99,8 @@ flowchart TD
     D --> E[5. FPE & Counter-Evidence System]
     E --> F[6. Recursive Improvement Engine (ΔS Control)]
     F --> G[7. QA Testing Framework]
-
-    classDef core fill:#222,color:#fff,stroke:#555;
-    class A,B,C,D,E,F,G core;
 ```
+
 
 `+------------------------------+`  
 `| 7. QA Testing Framework      |`  
