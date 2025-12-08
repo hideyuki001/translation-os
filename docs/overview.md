@@ -91,6 +91,7 @@ Details are available in /docs/architecture.md.
 
 ## **✅ Diagram 1: 7-Layer Unified System**
 
+```mermaid
 flowchart TD
     A[1. Philosophical Core] --> B[2. Structural Engine]
     B --> C[3. 6-Phase Translation Pipeline]
@@ -101,7 +102,6 @@ flowchart TD
 
     classDef core fill:#222,color:#fff,stroke:#555;
     class A,B,C,D,E,F,G core;
-
 ```
 
 `+------------------------------+`  
