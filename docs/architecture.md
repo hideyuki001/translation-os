@@ -193,17 +193,18 @@ flowchart TD
 
 # **5\. META Evaluation Logic**
 ```mermaid
-`flowchart TD`  
-    `A[Candidate Output] --> B[META Evaluation Gate]`
+flowchart TD
+    A[Candidate Output] --> B[META Evaluation Gate]
 
-    `B -->|YES| C[Proceed]`  
-    `B -->|NO| D[Trigger Refinement]`
+    B -->|YES| C[Proceed]
+    B -->|NO| D[Trigger Refinement]
 
-    `D --> E[Refine - strengthen / shorten / lower Delta S]`  
-    `E --> B`
+    D --> E[Refine - strengthen / shorten / lower Delta S]
+    E --> B
 
-    `C --> F[Final Stabilized Output]`
+    C --> F[Final Stabilized Output]
 ```
+
 ---
 
 # **6\. Interaction Between Layers**
