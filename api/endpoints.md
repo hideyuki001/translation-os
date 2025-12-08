@@ -18,6 +18,9 @@ All endpoints follow:
 
 # **Endpoint Overview**
 
+Note: These endpoints define the Translation OS API *specification*.  
+A running server implementation is not required to understand, evaluate, or use the OS design.
+
 Translation OS exposes **five core REST endpoints**, corresponding to Phases 1–5 of the pipeline:
 
 | Phase | Function | Endpoint |
