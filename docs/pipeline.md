@@ -17,7 +17,7 @@ Translation OS defines a six-phase workflow:
 
 4. **META Evaluation (YES/NO Gate)**
 
-5. **ΔS-Based Recursive Refinement**
+5. **Delta S Control-Based Recursive Refinement**
 
 6. **Naturalness & Cultural Verification (Human-in-the-loop)**
 
@@ -96,7 +96,7 @@ YES → Phase 6
 
 ---
 
-### **Phase 5 — Recursive Refinement (ΔS Control)**
+### **Phase 5 — Recursive Refinement (Delta S Control)**
 
 **Goal:** Reduce entropy; repair drift; converge structure.  
  **Example:**  
@@ -141,7 +141,7 @@ Corrected:
 Issue: Missing time  
  Evidence: Source contains explicit time → target lacks it  
  Fix: Restore temporal node  
- ΔS: High → Low
+ Delta S Control: High → Low
 
 ---
 
@@ -157,7 +157,7 @@ The Six-Phase Pipeline ensures:
 
 * Human-guided cultural alignment
 
-* Low ΔS at convergence
+* Low Delta S Control at convergence
 
 This pipeline is directly compatible with the API architecture described in `/api/endpoints.md`.
 
