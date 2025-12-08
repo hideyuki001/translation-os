@@ -1,1 +1,344 @@
+openapi: 3.0.3
+info:
+  title: Translation OS API
+  version: 1.0.0
+  description: |
+    Structure-first, deterministic translation pipeline API.
+    Provides semantic-core extraction, structural mapping,
+    draft synthesis, META evaluation, Delta-S refinement,
+    and structural entropy measurement.
+    Phase 6 (Cultural Verification) is intentionally human-in-the-loop
+    and therefore has no endpoint.
+
+servers:
+  - url: https://api.translation-os.dev
+    description: Example server (implementation-agnostic)
+
+paths:
+  /v1/semantic-core:
+    post:
+      summary: Extract semantic nucleus
+      description: Extracts essential meaning units from the source text.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SemanticCoreRequest'
+      responses:
+        '200':
+          description: Semantic nucleus extracted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SemanticCoreResponse'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v1/structure-remap:
+    post:
+      summary: Build cross-lingual structure
+      description: Transforms the semantic nucleus into a stable structural template.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StructureRemapRequest'
+      responses:
+        '200':
+          description: Structure generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StructureRemapResponse'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: Structure mismatch
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v1/synthesize:
+    post:
+      summary: Generate draft translation
+      description: Produces a structure-faithful draft sentence in the target language.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SynthesizeRequest'
+      responses:
+        '200':
+          description: Draft translation generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SynthesizeResponse'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v1/evaluate:
+    post:
+      summary: META Evaluation (YES/NO)
+      description: Validates alignment between candidate translation and structural template.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EvaluateRequest'
+      responses:
+        '200':
+          description: Evaluation completed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvaluateResponse'
+        '422':
+          description: Evaluation failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v1/refine:
+    post:
+      summary: Delta-S-based recursive refinement
+      description: Repairs drift using issues identified in META evaluation.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RefineRequest'
+      responses:
+        '200':
+          description: Refined translation generated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RefineResponse'
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /v1/deltaS:
+    post:
+      summary: Structural entropy measurement
+      description: Calculates structural entropy (ΔS) for stability assessment.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeltaSRequest'
+      responses:
+        '200':
+          description: Entropy measured
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeltaSResponse'
+        '500':
+          description: Internal error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+
+    # ---- Phase 1 ----
+    SemanticCoreRequest:
+      type: object
+      required: [source_text]
+      properties:
+        source_text:
+          type: string
+          example: "The update will roll out next week."
+
+    SemanticCoreResponse:
+      type: object
+      properties:
+        nucleus:
+          type: array
+          items:
+            type: string
+          example:
+            - "future_event"
+            - "scheduled_update"
+            - "time_reference: next_week"
+
+    # ---- Phase 2 ----
+    StructureRemapRequest:
+      type: object
+      required: [nucleus]
+      properties:
+        nucleus:
+          type: array
+          items:
+            type: string
+          example:
+            - "future_event"
+            - "scheduled_update"
+            - "time_reference: next_week"
+
+    StructureRemapResponse:
+      type: object
+      properties:
+        structure:
+          type: object
+          example:
+            event: "update rollout"
+            time: "next week"
+            modality: "planned"
+
+    # ---- Phase 3 ----
+    SynthesizeRequest:
+      type: object
+      required: [structure, target_lang]
+      properties:
+        structure:
+          type: object
+          example:
+            event: "update rollout"
+            time: "next week"
+            modality: "planned"
+        target_lang:
+          type: string
+          example: "ja"
+
+    SynthesizeResponse:
+      type: object
+      properties:
+        draft:
+          type: string
+          example: "アップデートは来週から段階的に展開される予定です。"
+
+    # ---- Phase 4 ----
+    EvaluateRequest:
+      type: object
+      required: [candidate, structure]
+      properties:
+        candidate:
+          type: string
+          example: "アップデートは来週段階的に展開される予定です。"
+        structure:
+          type: object
+          example:
+            event: "update rollout"
+            time: "next week"
+            modality: "planned"
+
+    EvaluateResponse:
+      type: object
+      properties:
+        meta_decision:
+          type: string
+          enum: [YES, NO]
+          example: "YES"
+        issues:
+          type: array
+          items:
+            type: string
+          example: []
+
+    # ---- Phase 5 ----
+    RefineRequest:
+      type: object
+      required: [candidate, issues]
+      properties:
+        candidate:
+          type: string
+          example: "アップデートは来週から展開されます。"
+        issues:
+          type: array
+          items:
+            type: string
+          example:
+            - "missing: planned modality"
+
+    RefineResponse:
+      type: object
+      properties:
+        refined:
+          type: string
+          example: "アップデートは来週から段階的に展開される予定です。"
+
+    # ---- Delta-S ----
+    DeltaSRequest:
+      type: object
+      required: [candidate]
+      properties:
+        candidate:
+          type: string
+          example: "アップデートは来週から段階的に展開される予定です。"
+
+    DeltaSResponse:
+      type: object
+      properties:
+        delta_s:
+          type: number
+          example: 0.12
+        status:
+          type: string
+          example: "stable"
+
+    # ---- Error ----
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+              example: "InvalidInput"
+            message:
+              type: string
+              example: "source_text field is missing."
 
