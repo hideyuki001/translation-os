@@ -135,6 +135,20 @@ flowchart TD
     F --> G[Final Output]
 ```
 
+## ✅ Diagram 3: META Evaluation & Refinement Flow
+
+```mermaid
+flowchart TD
+    A[Candidate Output] --> B[META Evaluation]
+
+    B -->|YES| C[Continue]
+    B -->|NO| D[Trigger Refinement]
+
+    D --> E[Refine - shorten / strengthen / reduce Delta S]
+    E --> B
+
+    C --> F[Final Stabilized Output]
+```
 ---
 
 # **📏 5\. Evaluation Principles**
