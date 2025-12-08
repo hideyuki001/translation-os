@@ -36,7 +36,7 @@ Phase 6 (Cultural Verification) is intentionally **human-in-the-loop** and has n
 
 ---
 
-### Phase 1 — /v1/semantic-core — Extract Semantic Nucleus**
+# ** Phase 1 — /v1/semantic-core — Extract Semantic Nucleus**
 
 Extracts essential meaning units from the source text.
 
