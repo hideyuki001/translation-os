@@ -102,23 +102,6 @@ flowchart TD
 ```
 
 
-`+------------------------------+`  
-`| 7. QA Testing Framework      |`  
-`+------------------------------+`  
-`| 6. Recursive Improvement     |`  
-`|        (ΔS Control)          |`  
-`+------------------------------+`  
-`| 5. FPE & Counter-Evidence    |`  
-`+------------------------------+`  
-`| 4. Unified Scoring Matrix    |`  
-`+------------------------------+`  
-`| 3. 6-Phase Translation Pipe  |`  
-`+------------------------------+`  
-`| 2. Structural Engine         |`  
-`+------------------------------+`  
-`| 1. Philosophical Core        |`  
-`+------------------------------+`
-
 ---
 
 # **🔄 4\. 6-Phase Translation Pipeline (Summary)**
@@ -139,7 +122,18 @@ flowchart TD
 
 ## **✅ Diagram 2: 6-Phase Pipeline**
 
-（`diagrams/pipeline-6-phase.png` を配置予定）
+```mermaid
+flowchart TD
+    A[1. Semantic Core Extraction] --> B[2. Structural Mapping]
+    B --> C[3. Syntactic Optimization]
+    C --> D{4. META Evaluation<br/>YES / NO}
+
+    D -- YES --> F[6. Naturalness & Cultural Verification]
+    D -- NO --> E[5. Recursive Refinement (Delta S Control)]
+
+    E --> D
+    F --> G[(Final Output)]
+```
 
 `[1 Semantic Core]`   
         `↓`  
