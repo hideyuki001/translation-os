@@ -28,16 +28,18 @@ The OS guarantees structural correctness (1–5),
 
 ## **2\. Pipeline Diagram**
 
-flowchart TD  
- A\[1. Semantic Core Extraction\] \--\> B\[2. Structural Mapping\]  
- B \--\> C\[3. Syntactic Optimization\]  
- C \--\> D{4. META Evaluation YES/NO}
+```mermaid
+flowchart TD
+    A[1. Semantic Core Extraction] --> B[2. Structural Mapping]
+    B --> C[3. Syntactic Optimization]
+    C --> D{4. META Evaluation<br/>YES / NO}
 
-`D -- YES --> F[6. Naturalness & Cultural Verification]`  
-`D -- NO --> E[5. Recursive Refinement (ΔS Control)]`
+    D -- YES --> F[6. Naturalness &amp;<br/>Cultural Verification]
+    D -- NO --> E[5. Recursive Refinement<br/>(Delta S Control)]
 
-`E --> D`  
-`F --> G[Final Output]`
+    E --> D
+    F --> G[Final Output]
+```
 
 **Flow in words:**  
  1→2→3 generate structure-first output;  
