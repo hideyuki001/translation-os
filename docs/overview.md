@@ -126,13 +126,13 @@ flowchart TD
 flowchart TD
     A[1. Semantic Core Extraction] --> B[2. Structural Mapping]
     B --> C[3. Syntactic Optimization]
-    C --> D{4. META Evaluation<br/>YES / NO}
+    C --> D{4. META Evaluation YES or NO}
 
-    D -- YES --> F[6. Naturalness & Cultural Verification]
-    D -- NO --> E[5. Recursive Refinement (Delta S Control)]
+    D -- YES --> F[6. Naturalness and Cultural Verification]
+    D -- NO --> E[5. Recursive Refinement - Delta S Control]
 
     E --> D
-    F --> G[(Final Output)]
+    F --> G[Final Output]
 ```
 
 `[1 Semantic Core]`   
