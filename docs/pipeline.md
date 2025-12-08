@@ -35,12 +35,11 @@ flowchart TD
     C --> D{4. META Evaluation YES NO}
 
     D -- YES --> F[6. Naturalness and Cultural Verification]
-    D -- NO --> E[5. Recursive Refinement (Delta S Control)]
+    D -- NO --> E[5. Recursive Refinement - Delta S Control]
 
     E --> D
     F --> G[Final Output]
 ```
-
 
 **Flow in words:**  
  1→2→3 generate structure-first output;  
