@@ -68,7 +68,7 @@ Identify the minimal semantic representation required for structure-first transl
 
 ---
 
-# **2\. `/v1/structure-remap` — Build Cross-Lingual Structure**
+# ** Phase 2 — /v1/structure-remap — Build Cross-Lingual Structure**
 
 Transforms the semantic nucleus into a stable structural template.
 
@@ -104,7 +104,7 @@ Create a structure-first scaffold before sentence generation.
 
 ---
 
-# **3\. `/v1/synthesize` — Generate Draft Sentence**
+# ** Phase 3 — /v1/synthesize — Generate Draft Sentence**
 
 Performs Phase 3 (Syntactic Optimization \+ Surface Realization).
 
@@ -137,7 +137,7 @@ Convert the structure into a coherent sentence in the target language.
 
 ---
 
-# **4\. `/v1/evaluate` — META Evaluation (YES / NO Gate)**
+# ** Phase 4 — /v1/evaluate` — META Evaluation (YES / NO Gate)**
 
 Performs Phase 4 of the pipeline.
 
@@ -181,9 +181,7 @@ Verify that the candidate translation matches the structural template.
 
 ---
 
-# **5\. `/v1/refine` — Delta-S-Based Recursive Refinement**
-
-Phase 5 of the pipeline. Repairs drift and stabilizes structure.
+# ** Phase 5 — Phase 5 of the pipeline. Repairs drift and stabilizes structure.
 
 ### **Purpose**
 
@@ -210,7 +208,7 @@ Strengthen structure, repair drift, and lower structural entropy.
 
 ---
 
-# **6\. `/v1/deltaS` — Structural Entropy Measurement**
+# ** Phase 6 — /v1/deltaS — Structural Entropy Measurement**
 
 Utility endpoint (not part of the main pipeline).
 
