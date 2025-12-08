@@ -181,7 +181,7 @@ Verify that the candidate translation matches the structural template.
 
 ---
 
-# ** Phase 5 — /v1/refine — Delta-S-Based Recursive Refinement
+# ** Phase 5 — /v1/refine — Delta-S-Based Recursive Refinement **
 
 Repairs drift and stabilizes structure (Phase 5 of the pipeline).
 
