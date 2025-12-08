@@ -4,58 +4,59 @@
 
 Translation OS is a **structure-first translation operating system** designed to eliminate semantic drift, ensure reproducibility, and provide deterministic evaluation across languages and models.
 
-This document explains the **core philosophy**, **structural logic**, and **theoretical foundation** of the OS.  
- It is not an API reference; it is the *conceptual heart* of Translation OS.
+This document defines the **core philosophy**, **structural logic**, and **cognitive-theoretical basis** of the OS.  
+ It is *not* an API reference — it is the **conceptual heart** of Translation OS.
 
 ---
 
 # **🔷 1\. Why Structure-First Translation?**
 
-### **❌ The problem with modern translation**
+## **❌ The fundamental problem in modern translation**
 
-Modern MT and LLM-based translation often suffers from:
+MT/LLM-based translation often exhibits:
 
-* **instability**（同じ入力で出力が揺れる）
+* instability（出力揺れ）
 
-* **semantic drift**（意味ズレ）
+* semantic drift（意味ズレ）
 
-* **surface-level paraphrasing**（表層だけが変動）
+* surface-level paraphrasing
 
-* **reviewer-dependent quality**（再現性なし）
+* reviewer-dependent quality
 
-* **lack of evidence chains**（根拠が示されない）
+* lack of evidence chains
 
-These problems originate from one root cause:
+The root cause:
 
-**Models generate sentences before understanding structure.**  
- This makes meaning unstable.
+**Models generate sentences before establishing structure.**
 
-### **✔ Translation OS solves this by reversing the process.**
-
-Instead of generating first, Translation OS:
-
-1. extracts meaning
-
-2. maps it into structure
-
-3. generates sentence
-
-4. evaluates structure
-
-5. recursively refines using ΔS
-
-Meaning → Structure → Sentence (not vice versa).
-
-This guarantees **stability, reproducibility, and semantic fidelity.**
+Meaning becomes unstable because generation happens too early.
 
 ---
 
-# **🔷 2\. The Six-Phase Pipeline (Conceptual)**
+## **✔ Translation OS reverses the workflow**
 
-Translation OS is built on the Six-Phase Pipeline:
+Instead of *generate → fix*, Translation OS performs:
+
+1. extract meaning
+
+2. map structure
+
+3. generate sentence
+
+4. evaluate
+
+5. refine using ΔS
+
+Meaning → Structure → Sentence
+
+This ensures **stability, reproducibility, and semantic fidelity**.
+
+---
+
+# **🔷 2\. The Six-Phase Pipeline (Conceptual Overview)**
 
 1. **Semantic Core Extraction**  
-    → Identify the minimal meaning units (“nucleus”)
+    → Identify minimal meaning units (“nucleus”)
 
 2. **Structural Mapping**  
     → Convert nucleus into a cross-lingual structural template
@@ -63,29 +64,30 @@ Translation OS is built on the Six-Phase Pipeline:
 3. **Syntactic Optimization & Draft Synthesis**  
     → Generate a structure-faithful draft
 
-4. **META Evaluation (YES/NO)**  
-    → Strict gate ensuring structural compliance
+4. **META Evaluation (YES/NO Gate)**  
+    → Strict alignment verification
 
 5. **Recursive Refinement (ΔS Control)**  
-    → Repair drift, strengthen structure
+    → Strengthen structure and reduce drift
 
 6. **Cultural Verification（Human-in-the-loop）**  
-    → Cultural judgment cannot be automated
+    → Cultural meaning cannot be automated
 
-This pipeline is the spine of every translation workflow.
+This pipeline is the **spine** of Translation OS.
 
 ---
 
 # **🔷 3\. Semantic Nucleus — The Foundational Abstraction**
 
-The **Semantic Nucleus** is the smallest complete representation of meaning.  
- It is:
+The **Semantic Nucleus** is the smallest stable representation of meaning.
 
-* **language-agnostic**
+Properties:
 
-* **stable across models**
+* language-agnostic
 
-* **minimal but sufficient**
+* minimal & sufficient
+
+* stable across models
 
 Example:
 
@@ -93,16 +95,13 @@ Example:
 `"scheduled_update",`  
 `"time_reference: next_week"`
 
-This ensures that every later step operates not on sentences,  
- but on *meaning itself.*
+Later phases operate on **meaning**, not language.
 
 ---
 
 # **🔷 4\. Structure Remapping — The Cross-Lingual Scaffold**
 
-The nucleus is mapped into a **structural template** representing the universal logic of the sentence.
-
-Example:
+The nucleus is transformed into a universal structural template:
 
 `{`  
   `"event": "update rollout",`  
@@ -110,135 +109,133 @@ Example:
   `"modality": "planned"`  
 `}`
 
-### **Why structure matters:**
+### **Why this matters**
 
-* it eliminates ambiguity
+* eliminates ambiguity
 
-* it prevents paraphrase drift
+* prevents paraphrasing drift
 
-* it maintains consistency across languages
+* ensures cross-lingual consistency
 
-* it gives a clear target for evaluation
+* gives a deterministic target for evaluation
 
-A translation is considered **correct** only if it aligns with this template.
+A translation is correct *only if* it matches this structure.
 
 ---
 
 # **🔷 5\. Draft Synthesis — Controlled Generation**
 
-Draft synthesis is deliberately simple:
-
-* no creativity
-
-* no paraphrasing
+Controlled, non-creative generation:
 
 * no stylistic drift
 
-It builds sentences directly from the structure, ensuring:
+* no paraphrase noise
 
-* stable word order
+* direct mapping from structure
 
-* consistent modality
+Ensures:
 
-* preserved relations
+* stable modality
 
-This is where traditional MT “hallucinates,”  
- but Translation OS stays deterministic.
+* consistent relations
+
+* deterministic sentence formation
+
+Where traditional MT hallucinates,  
+ Translation OS remains **structurally anchored**。
 
 ---
 
-# **🔷 6\. META Evaluation — The Binary Gate**
+# **🔷 6\. META Evaluation — The Binary Quality Gate**
 
 META Evaluation is intentionally strict:
 
-* **YES** → output is structurally aligned
+* **YES** → structurally aligned
 
-* **NO** → issues are returned explicitly
+* **NO** → explicit issues returned
 
-Example:
+Examples:
 
 `"missing: planned modality"`  
 `"weakened emphasis on schedule"`  
 `"time_reference diluted"`
 
-There is *no partial credit.*  
- This gate ensures quality without subjective bias.
+There is **no partial credit**.  
+ This removes subjective bias from translation quality.
 
 ---
 
-# **🔷 7\. ΔS — Structural Entropy**
+# **🔷 7\. ΔS — Structural Entropy Metric**
 
-ΔS measures **structural instability** in a candidate translation.
+ΔS measures the amount of **structural chaos** in a candidate.
 
-* Low ΔS → structurally aligned
+* Low ΔS → stable, aligned
 
-* High ΔS → drift, inconsistency, ambiguity
+* High ΔS → drift / ambiguity / noise
 
-ΔS is calculated from:
+ΔS is computed from:
 
-* missing meaning units
+* missing or weakened meaning units
 
-* weakened modality
+* modality inconsistencies
 
 * semantic noise
 
 * syntactic ambiguity
 
-* surface drift vs. structural template
+* deviation from structure template
 
-Refinement continues until ΔS stabilizes.
+Refinement continues until **ΔS stabilizes**。
 
 ---
 
-# **🔷 8\. Recursive Refinement — Convergence Loop**
+# **🔷 8\. Recursive Refinement — Structural Convergence**
 
-Refinement uses the issues discovered in META Evaluation:
+Refinement uses issues found in META Evaluation:
 
 * missing modality → reinsert
 
-* meaning drift → tighten
+* meaning drift → tighten wording
 
 * ambiguity → clarify
 
-* wrong emphasis → correct
+* emphasis drift → correct
 
-The loop:
+Loop:
 
 `evaluate → refine → evaluate → refine`
-
-continues until structural entropy drops below a threshold.
 
 This is the mathematical core of Translation OS.
 
 ---
 
-# **🔷 9\. Phase 6 — Human-in-the-Loop Cultural Verification**
+# **🔷 9\. Phase 6 — Cultural Verification (Human-in-the-Loop)**
 
-Translation OS intentionally **excludes cultural judgment from automation**.
+Translation OS intentionally **excludes culture** from automation.
 
-Because:
+Reasons:
 
-* LLMs hallucinate cultural intent
+* LLM hallucinations in cultural inference
 
-* Cultural equivalence requires human world knowledge
+* bias & safety risks
 
-* Safety issues (stereotypes, bias, misrepresentation)
+* domain-specific cultural nuance
 
-* Domain-specific nuance cannot be fully encoded
+* humans hold the contextual memory of culture
 
-Therefore:
+Thus:
 
-**Culture \= OS外の専用レイヤー（人間 × AI協働）**
+**Culture \= OS外の独立レイヤー（Human × AI 協働）**
 
-This maintains ethical integrity and avoids unsafe automation.
+This preserves ethical integrity.
 
 ---
 
-# **🔷 10\. Why Translation OS Works (Theory)**
+# **🔷 10\. Why Translation OS Works — Theoretical Basis**
 
-Translation OS works because it follows:
+Translation OS integrates:
 
-### **■ Structuralism（構造主義）**
+### **■ Structuralism**
 
 Meaning emerges from relations, not words.
 
@@ -246,55 +243,55 @@ Meaning emerges from relations, not words.
 
 ΔS \= structural entropy → guides convergence.
 
-### **■ Cross-lingual mapping**
+### **■ Cross-Lingual Normalization**
 
-Language differences are normalized at the structural level.
+Structure acts as the universal intermediate form.
 
-### **■ Human-in-the-loop ethics**
+### **■ Human-in-the-loop Ethics**
 
-Cultural meaning cannot be automated.
+Culture cannot be safely automated.
 
-Together, these principles create a deterministic translation architecture.
+Together, these create a **deterministic translation architecture**.
 
 ---
 
-# **🔷 11\. Who Uses Translation OS**
+# **🔷 11\. Who Translation OS Is For**
 
-* Localization Service Providers (LSP)
+* LSPs
 
 * AI/LLM evaluation teams
 
 * RAG/MT developers
 
-* Academic researchers
+* Academic NLP researchers
 
-* UI/UX localization teams
+* UI/UX localization engineers
 
-* Safety and alignment evaluators
+* Alignment & safety evaluators
 
-* Creative language system architects
+* Cognitive system architects
 
-It is designed as an OS — not a translation model.
+Translation OS is an **OS**, not a model.
 
 ---
 
-# **🔷 12\. The Philosophy Behind Translation OS**
+# **🔷 12\. Philosophy — Translation as Structure Negotiation**
 
-At its core:
+Translation is not sentence rewriting.
 
-Translation is not sentence transformation.
+Translation is:
 
-It is **structure negotiation across languages**.
+**structure negotiation across languages.**
 
-Meaning must be extracted, stabilized, mapped, verified,  
- and only then converted into language.
+Meaning must be extracted, stabilized, mapped, evaluated,  
+ and only then expressed linguistically.
 
-Translation OS encodes this worldview as reproducible software.
+Translation OS encodes this worldview as **reproducible software**。
 
 ---
 
 # **✔ End of Document**
 
 **Translation OS Core v1.0**  
- src/translation\_os\_core
+ `docs/translation_os_core.md`
 
