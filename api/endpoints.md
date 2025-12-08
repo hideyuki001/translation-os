@@ -1,8 +1,6 @@
-# **📄 /api/endpoints.md — Translation OS API Endpoints**
+# **/api/endpoints.md — Translation OS API Endpoints (v1.0)**
 
-*(Version 1.0 — Minimal & Elegant Specification)*
-
-Translation OS exposes **five minimal REST endpoints**, each representing a core component of the structure-first translation pipeline.
+**Minimal, deterministic, and structure-first translation API.**
 
 All endpoints follow:
 
@@ -14,15 +12,34 @@ All endpoints follow:
 
 * Model-agnostic design
 
+* Fully aligned with the Six-Phase Pipeline
+
 ---
 
-# **\#\# 1\. /v1/semantic-core**
+# **Endpoint Overview**
 
-Extracts the **Semantic Nucleus** from the input text.
+Translation OS exposes **five core REST endpoints**, corresponding to Phases 1–5 of the pipeline:
+
+| Phase | Function | Endpoint |
+| ----- | ----- | ----- |
+| 1 | Semantic Core Extraction | `/v1/semantic-core` |
+| 2 | Structural Mapping | `/v1/structure-remap` |
+| 3 | Draft Synthesis (Surface Realization) | `/v1/synthesize` |
+| 4 | META Evaluation (YES/NO) | `/v1/evaluate` |
+| 5 | Delta-S-Based Refinement | `/v1/refine` |
+| — | ΔS Measurement (Utility) | `/v1/deltaS` |
+
+Phase 6 (Cultural Verification) is intentionally **human-in-the-loop** and has no endpoint.
+
+---
+
+# **1\. `/v1/semantic-core` — Extract Semantic Nucleus**
+
+Extracts essential meaning units from the source text.
 
 ### **Purpose**
 
-Identify the essential meaning units required for structure-first translation.
+Identify the minimal semantic representation required for structure-first translation.
 
 ### **Request**
 
@@ -42,19 +59,19 @@ Identify the essential meaning units required for structure-first translation.
 
 ### **Notes**
 
-* Output is language-agnostic.
+* Output is **language-agnostic**.
 
-* Used by all later pipeline stages.
+* Required by all downstream phases.
 
 ---
 
-# **\#\# 2\. /v1/structure-remap**
+# **2\. `/v1/structure-remap` — Build Cross-Lingual Structure**
 
-Maps meaning units into a stable cross-lingual structure.
+Transforms the semantic nucleus into a stable structural template.
 
 ### **Purpose**
 
-Transform the semantic nucleus into a culturally neutral structural template.
+Create a structure-first scaffold before sentence generation.
 
 ### **Request**
 
@@ -78,19 +95,52 @@ Transform the semantic nucleus into a culturally neutral structural template.
 
 ### **Notes**
 
-* Ensures structural consistency before generation.
+* Prevents structural drift.
 
-* Prevents drift in MT/LLM systems.
+* Ensures consistent generation across languages.
 
 ---
 
-# **\#\# 3\. /v1/evaluate**
+# **3\. `/v1/synthesize` — Generate Draft Sentence**
 
-Runs the **META Evaluation Gate** (YES / NO).
+Performs Phase 3 (Syntactic Optimization \+ Surface Realization).
 
 ### **Purpose**
 
-Determine whether a candidate translation passes the structural requirements.
+Convert the structure into a coherent sentence in the target language.
+
+### **Request**
+
+`{`  
+  `"structure": {`  
+    `"event": "update rollout",`  
+    `"time": "next week",`  
+    `"modality": "planned"`  
+  `},`  
+  `"target_lang": "ja"`  
+`}`
+
+### **Response**
+
+`{`  
+  `"draft": "アップデートは来週から段階的に展開される予定です。"`  
+`}`
+
+### **Notes**
+
+* Produces a **structure-faithful** draft.
+
+* Typically fed directly into `/evaluate`.
+
+---
+
+# **4\. `/v1/evaluate` — META Evaluation (YES / NO Gate)**
+
+Performs Phase 4 of the pipeline.
+
+### **Purpose**
+
+Verify that the candidate translation matches the structural template.
 
 ### **Request**
 
@@ -103,14 +153,14 @@ Determine whether a candidate translation passes the structural requirements.
   `}`  
 `}`
 
-### **Response**
+### **Response (YES)**
 
 `{`  
   `"meta_decision": "YES",`  
   `"issues": []`  
 `}`
 
-### **If NO**
+### **Response (NO)**
 
 `{`  
   `"meta_decision": "NO",`  
@@ -122,27 +172,25 @@ Determine whether a candidate translation passes the structural requirements.
 
 ### **Notes**
 
-* Binary decision only（YES/NO）
+* Strict binary decision.
 
-* Issues → fed directly into /refine
+* Issues are passed directly into `/refine`.
 
 ---
 
-# **\#\# 4\. /v1/refine**
+# **5\. `/v1/refine` — Delta-S-Based Recursive Refinement**
 
-Repairs meaning drift and reduces ΔS (structural entropy).
+Phase 5 of the pipeline. Repairs drift and stabilizes structure.
 
 ### **Purpose**
 
-Produce a stronger, shorter, more stable version of the candidate translation.
+Strengthen structure, repair drift, and lower structural entropy.
 
 ### **Request**
 
 `{`  
   `"candidate": "アップデートは来週から展開されます。",`  
-  `"issues": [`  
-    `"missing: planned modality"`  
-  `]`  
+  `"issues": ["missing: planned modality"]`  
 `}`
 
 ### **Response**
@@ -153,21 +201,19 @@ Produce a stronger, shorter, more stable version of the candidate translation.
 
 ### **Notes**
 
-* Always returns a “stronger” structure
+* Always produces a **stronger, more stable** output.
 
-* Should make META more likely to pass
-
-* Used repeatedly until stabilization
+* Repeat until META Evaluation becomes YES.
 
 ---
 
-# **\#\# 5\. /v1/deltaS**
+# **6\. `/v1/deltaS` — Structural Entropy Measurement**
 
-Computes structural entropy (ΔS) of the candidate.
+Utility endpoint (not part of the main pipeline).
 
 ### **Purpose**
 
-Quantify structural stability to ensure convergence.
+Quantify structural entropy (Delta-S) for convergence.
 
 ### **Request**
 
@@ -184,17 +230,17 @@ Quantify structural stability to ensure convergence.
 
 ### **Notes**
 
-* Lower ΔS \= better structural alignment
+* Lower ΔS \= better structural alignment.
 
-* Used as a refinement stop condition
+* Can be used as a refinement stop condition.
 
 ---
 
-# **\# Error Handling**
+# **Error Handling**
 
-All endpoints return:
+All endpoints may return errors in the following format:
 
-### **Error Format**
+### **Error JSON**
 
 `{`  
   `"error": {`  
@@ -203,48 +249,44 @@ All endpoints return:
   `}`  
 `}`
 
-Typical error types:
+### **Standard HTTP Status Codes**
 
-* `InvalidInput`
-
-* `MissingField`
-
-* `StructureMismatch`
-
-* `EvaluationFailure`
-
-* `InternalError`
+| Status | Meaning |
+| ----- | ----- |
+| **400 Bad Request** | InvalidInput / MissingField |
+| **409 Conflict** | StructureMismatch |
+| **422 Unprocessable Entity** | EvaluationFailure |
+| **500 Internal Server Error** | InternalError |
 
 ---
 
-# **\# Evidence Chain (Short Description)**
+# **Evidence Chain Integration (Short Description)**
 
-The **Counter-Evidence System** ensures that every correction includes explicit justification.
+Each correction must include explicit justification.
 
-Example:
+### **Example**
 
 `{`  
   `"issue": "meaning_drift",`  
-  `"evidence": "time_reference missing compared to structure: next week"`  
+  `"evidence": "time_reference missing compared to structure: next_week"`  
 `}`
 
----
-
-# **\# Versioning**
-
-All endpoints are under:
-
-`/v1/`
-
-Future versions will follow semantic versioning:
-
-`/v2/`  
-`/v3/`
+This evidence can be consumed by `/refine` and tracked for QA.
 
 ---
 
-# **\# License**
+# **Versioning**
+
+Endpoints follow semantic versioning:
+
+`/v1/...`  
+`/v2/...`  
+`/v3/...`
+
+---
+
+# **License**
 
 Recommend: **MIT License**  
- (compatible with commercial and OSS reuse)
+ Compatible with both commercial and open-source reuse.
 
