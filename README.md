@@ -81,7 +81,6 @@ Therefore:
 This design makes Translation OS a **real operating system**,  
 not merely a translation model or prompt library.
 
----
 
 ### 🔍 Summary
 
@@ -89,6 +88,8 @@ not merely a translation model or prompt library.
 - **Layer 3** → cultural cognition → remains a *Human-in-the-loop* extension  
 - Avoids false claims of “full automation”  
 - Highlights the unique strengths of Translation OS — **structural abstraction and cultural co-creation**
+
+---
 
 
 ## 🏗 Architecture Overview
