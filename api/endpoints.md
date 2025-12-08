@@ -137,7 +137,7 @@ Convert the structure into a coherent sentence in the target language.
 
 ---
 
-# ** Phase 4 — /v1/evaluate` — META Evaluation (YES / NO Gate)**
+# ** Phase 4 — /v1/evaluate — META Evaluation (YES / NO Gate)**
 
 Performs Phase 4 of the pipeline.
 
