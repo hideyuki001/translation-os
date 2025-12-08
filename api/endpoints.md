@@ -210,7 +210,7 @@ Strengthen structure, repair drift, and lower structural entropy.
 
 ---
 
-# ** Phase 6 — /v1/deltaS — Structural Entropy Measurement**
+# Utility — /v1/deltaS — Structural Entropy Measurement
 
 Utility endpoint (not part of the main pipeline).
 
