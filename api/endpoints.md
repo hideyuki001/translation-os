@@ -181,7 +181,7 @@ Verify that the candidate translation matches the structural template.
 
 ---
 
-# ** Phase 5 — Phase 5 of the pipeline. Repairs drift and stabilizes structure.
+# ** Phase 5 — Phase 5 of the pipeline. Repairs drift and stabilizes structure.**
 
 ### **Purpose**
 
