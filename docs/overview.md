@@ -135,20 +135,6 @@ flowchart TD
     F --> G[Final Output]
 ```
 
-`[1 Semantic Core]`   
-        `↓`  
-`[2 Structure Map]`  
-        `↓`  
-`[3 Syntax Optimize]`  
-        `↓`  
-`[4 META Evaluation]`  
-   `YES → go forward`  
-   `NO  → refine`  
-        `↓`  
-`[5 ΔS Refinement Loop]`  
-        `↓`  
-`[6 Cultural Verification]`
-
 ---
 
 # **📏 5\. Evaluation Principles**
