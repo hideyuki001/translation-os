@@ -86,13 +86,23 @@ Translation OS contains **7 unified layers**:
 
 7. **QA Testing Framework**
 
-詳細は `/docs/architecture.md`。
-
+Details are available in /docs/architecture.md.
 ---
 
 ## **✅ Diagram 1: 7-Layer Unified System**
 
-（ここに `diagrams/architecture-7-layer.png` を置く想定）
+```mermaid
+flowchart TD
+    A[1. Philosophical Core] --> B[2. Structural Engine]
+    B --> C[3. 6-Phase Translation Pipeline]
+    C --> D[4. Unified Scoring Matrix]
+    D --> E[5. FPE & Counter-Evidence System]
+    E --> F[6. Recursive Improvement Engine (ΔS Control)]
+    F --> G[7. QA Testing Framework]
+
+    classDef core fill:#222,color:#fff,stroke:#555;
+    class A,B,C,D,E,F,G core;
+```
 
 `+------------------------------+`  
 `| 7. QA Testing Framework      |`  
