@@ -32,14 +32,15 @@ The OS guarantees structural correctness (1–5),
 flowchart TD
     A[1. Semantic Core Extraction] --> B[2. Structural Mapping]
     B --> C[3. Syntactic Optimization]
-    C --> D{4. META Evaluation<br/>YES / NO}
+    C --> D{4. META Evaluation (YES / NO)}
 
-    D -- YES --> F[6. Naturalness &amp;<br/>Cultural Verification]
-    D -- NO --> E[5. Recursive Refinement<br/>(Delta S Control)]
+    D -- YES --> F[6. Naturalness and Cultural Verification]
+    D -- NO --> E[5. Recursive Refinement (Delta S Control)]
 
     E --> D
     F --> G[Final Output]
-```
+``
+
 
 **Flow in words:**  
  1→2→3 generate structure-first output;  
