@@ -178,18 +178,18 @@ flowchart TD
 
 # **4\. Diagram — Six-Phase Pipeline**
 ```mermaid
-`flowchart TD`  
-    `A[1. Semantic Core Extraction] --> B[2. Structural Mapping]`  
-    `B --> C[3. Syntactic Optimization]`  
-    `C --> D{4. META Evaluation YES or NO}`
+flowchart TD
+    A[1. Semantic Core Extraction] --> B[2. Structural Mapping]
+    B --> C[3. Syntactic Optimization]
+    C --> D{4. META Evaluation YES or NO}
 
-    `D -- YES --> F[6. Naturalness & Cultural Verification]`  
-    `D -- NO --> E[5. Recursive Refinement - Delta S Control]`
+    D -- YES --> F[6. Naturalness & Cultural Verification]
+    D -- NO --> E[5. Recursive Refinement - Delta S Control]
 
-    `E --> D`  
-    `F --> G[Final Output]`
+    E --> D
+    F --> G[Final Output]
 ```
----
+
 
 # **5\. META Evaluation Logic**
 ```mermaid
