@@ -52,7 +52,7 @@ Ensures strict structural alignment.
 Cultural judgment is intentionally **not** automated.
 
 For the full theoretical foundation:  
- 👉 `docs/translation_os_core.md`
+ 👉 [docs/translation_os_core.md](docs/translation_os_core.md)
 
 ---
 
