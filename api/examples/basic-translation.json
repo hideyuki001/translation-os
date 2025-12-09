@@ -1,1 +1,27 @@
+{
+  "input": {
+    "source_text": "The update will roll out next week."
+  },
+  "semantic_core": {
+    "nucleus": [
+      "future_event",
+      "scheduled_update",
+      "time_reference: next_week"
+    ]
+  },
+  "structure": {
+    "event": "update rollout",
+    "time": "next week",
+    "modality": "planned"
+  },
+  "draft": "アップデートは来週から段階的に展開される予定です。",
+  "evaluation": {
+    "meta_decision": "YES",
+    "issues": []
+  },
+  "delta_s": {
+    "value": 0.12,
+    "status": "stable"
+  }
+}
 
