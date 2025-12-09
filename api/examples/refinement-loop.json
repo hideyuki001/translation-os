@@ -1,0 +1,7 @@
+{
+  "candidate": "アップデートは来週から展開されます。",
+  "issues": ["missing: planned modality"],
+  "refined": "アップデートは来週から段階的に展開される予定です。",
+  "evaluation_after_refine": "YES",
+  "delta_s_after_refine": 0.10
+}
