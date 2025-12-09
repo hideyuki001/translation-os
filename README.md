@@ -75,9 +75,10 @@ Translation OS consists of seven unified layers:
 7. QA Testing Framework
 
 More details:  
- 👉 `docs/architecture.md`  
- 👉 `docs/pipeline.md`  
- 👉 `docs/overview.md`
+👉 [docs/architecture.md](docs/architecture.md)  
+👉 [docs/pipeline.md](docs/pipeline.md)  
+👉 [docs/overview.md](docs/overview.md)
+
 
 ---
 
@@ -92,8 +93,9 @@ Translation OS exposes five minimal REST endpoints:
 `POST /v1/refine`
 
 Full API specification and examples:  
- 👉 `api/endpoints.md`  
- 👉 `api/openapi.yml`
+👉 [api/endpoints.md](api/endpoints.md)  
+👉 [api/openapi.yml](api/openapi.yml)
+
 
 ---
 
