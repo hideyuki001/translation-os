@@ -36,7 +36,7 @@ Phase 6 (Cultural Verification) is intentionally **human-in-the-loop** and has n
 
 ---
 
-# ** Phase 1 — /v1/semantic-core — Extract Semantic Nucleus**
+# Phase 1 — /v1/semantic-core — Extract Semantic Nucleus
 
 Extracts essential meaning units from the source text.
 
@@ -68,7 +68,7 @@ Identify the minimal semantic representation required for structure-first transl
 
 ---
 
-# ** Phase 2 — /v1/structure-remap — Build Cross-Lingual Structure**
+# Phase 2 — /v1/structure-remap — Build Cross-Lingual Structure
 
 Transforms the semantic nucleus into a stable structural template.
 
@@ -104,7 +104,7 @@ Create a structure-first scaffold before sentence generation.
 
 ---
 
-# ** Phase 3 — /v1/synthesize — Generate Draft Sentence**
+# Phase 3 — /v1/synthesize — Generate Draft Sentence
 
 Performs Phase 3 (Syntactic Optimization \+ Surface Realization).
 
@@ -137,7 +137,7 @@ Convert the structure into a coherent sentence in the target language.
 
 ---
 
-# ** Phase 4 — /v1/evaluate — META Evaluation (YES / NO Gate)**
+# Phase 4 — /v1/evaluate — META Evaluation (YES / NO Gate)
 
 Performs Phase 4 of the pipeline.
 
@@ -181,7 +181,7 @@ Verify that the candidate translation matches the structural template.
 
 ---
 
-# ** Phase 5 — /v1/refine — Delta-S-Based Recursive Refinement **
+# Phase 5 — /v1/refine — Delta-S-Based Recursive Refinement
 
 Repairs drift and stabilizes structure (Phase 5 of the pipeline).
 
