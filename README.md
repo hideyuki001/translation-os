@@ -1,215 +1,128 @@
-# Translation OS — Language-Agnostic Core
-A reproducible, structure-driven translation & QA operating system.
+# **📘 Translation OS — Language-Agnostic Core**
 
-**Version:** 1.0  
-**Author:** Hideyuki Okabe  
-**Status:** Production-Ready Core (Golden Master)
+A structure-first translation & QA operating system.  
+**Version 1.0 · Designed by Hideyuki Okabe**
 
 ---
 
-## 🔥 What is Translation OS?
+## **🔥 What is Translation OS?**
 
-Translation OS is a language-agnostic, structure-driven translation and QA operating system designed to bring reproducibility, semantic fidelity, structural consistency, cultural adequacy, and evidence-based evaluation to every translation workflow.
+Translation OS is a reproducible, structure-driven translation operating system that eliminates semantic drift and ensures deterministic, evidence-based translation quality across languages, models, and reviewers.
 
-Unlike conventional translation approaches based on intuition or word substitution, Translation OS treats translation as:
+Unlike conventional translation or LLM prompting, Translation OS is:
 
-**“Semantic + Pragmatic + Cultural Structure Mapping”**
+* model-agnostic
 
-This repository publishes the complete Language-Agnostic Core, extracted from the Translation OS master specification.
+* language-agnostic
 
----
+* structure-first
 
-## 🧠 Core Principles
+* evidence-based
 
-- Translation is not word replacement  
-- Translation is structure remapping  
-- Meaning nucleus (semantic core) must be extracted first  
-- Structural flow > surface form  
-- Pragmatics and context determine correctness  
-- Every decision must be evidence-based  
-- Drift detection (meaning shifts) is mandatory  
-- ΔS (structural entropy) must decrease after refinement  
+* reproducible
 
----
-## 🧩 Cultural / Cognitive Layer (Human-in-the-Loop)
-### with the “Japanese Omakase Logic” Metaphor
+It treats translation not as *sentence rewriting* but as:
 
-Translation OS separates translation reasoning into three layers:
+**Meaning → Structure → Evaluation → Refinement**
 
-### **1. Semantic Nucleus Layer — fully automated**
-Extracts invariant meaning components from the source text.
-
-### **2. Structural Mapping Layer — fully automated**
-Reconstructs the logical, temporal, and pragmatic structure in the target language.
-
-### **3. Cultural / Cognitive Layer — semi-automated**
-Handles cultural fit, high-context reasoning, politeness systems, social meaning, and audience norms.
-
-Only Layers **1** and **2** are integrated into the Translation OS API.  
-Layer **3** is intentionally **not** fully automated.
+This is the foundation of a deterministic translation workflow.
 
 ---
 
-### ⭐ Why? — “Japanese Omakase Logic”
+## **🧠 Core Concepts**
 
-To help non-Japanese engineers understand this decision,  
-Translation OS uses the metaphor of **Japanese Omakase Logic**.
+### **Semantic Nucleus Extraction**
 
-In an *omakase* meal, the chef adjusts:
+Meaning is extracted as minimal, language-agnostic units.
 
-- flavor  
-- temperature  
-- timing  
-- sequence  
-- emotional experience  
+### **Cross-Lingual Structural Mapping**
 
-based on subtle, unspoken signals from the customer.
+Structures are normalized before generation.
 
-This dynamic adjustment **cannot be fully automated**.  
-It is a **human–human cognitive loop**, guided by culture, empathy, and context.
+### **ΔS (Structural Entropy)**
 
-Translation OS applies the same principle:
+Measures structural drift and instability.
 
-- **Semantic + structural layers → machine-automatable**  
-- **Cultural layer → requires joint reasoning between human and AI**
+### **META Evaluation (YES/NO Gate)**
 
-Therefore:
+Ensures strict structural alignment.
 
-> **Translation OS does not attempt to fully automate cultural judgement.  
-> Instead, it provides the structural foundation upon which human cultural reasoning can operate.**
+### **Human-in-the-loop Cultural Layer**
 
-This design makes Translation OS a **real operating system**,  
-not merely a translation model or prompt library.
+Cultural judgment is intentionally **not** automated.
 
-
-### 🔍 Summary
-
-- **Layers 1 & 2** → deterministic, automatable → processed by the OS  
-- **Layer 3** → cultural cognition → remains a *Human-in-the-loop* extension  
-- Avoids false claims of “full automation”  
-- Highlights the unique strengths of Translation OS — **structural abstraction and cultural co-creation**
+For the full theoretical foundation:  
+ 👉 `docs/translation_os_core.md`
 
 ---
 
+## **🏗 Architecture Overview**
 
-## 🏗 Architecture Overview
+Translation OS consists of seven unified layers:
 
-Translation OS consists of 7 unified layers:
+1. Philosophical Core
 
-1. Philosophical Core  
-2. Structural Engine  
-3. 6-Phase Translation Pipeline  
-4. Unified Scoring Matrix  
-5. FPE & Counter-Evidence System  
-6. Recursive Improvement Engine  
-7. QA Testing Framework  
+2. Structural Engine
 
-See: `/docs/architecture.md`
+3. Six-Phase Translation Pipeline
 
----
+4. Unified Evaluation Matrix
 
-## 🔄 6-Phase Translation Pipeline
+5. Counter-Evidence System
 
-1. Semantic Core Extraction  
-2. Structural Mapping  
-3. Syntactic Optimization  
-4. META Evaluation  
-5. Recursive Refinement（ΔS-based）  
-6. Naturalness & Cultural Verification  
+6. Recursive Refinement Engine (ΔS)
 
-See: `/docs/pipeline.md`
+7. QA Testing Framework
+
+More details:  
+ 👉 `docs/architecture.md`  
+ 👉 `docs/pipeline.md`  
+ 👉 `docs/overview.md`
 
 ---
 
-## 📏 Evaluation Matrix
+## **🌐 API Endpoints (v1.0)**
 
-| Metric              | Weight |
-|---------------------|--------|
-| Semantic Fidelity   | 0.30   |
-| Structural Flow     | 0.20   |
-| Lexical Precision   | 0.15   |
-| Cultural Adaptation | 0.20   |
-| Reader Resonance    | 0.15   |
+Translation OS exposes five minimal REST endpoints:
 
-**META Evaluation Method: YES / NO / TRUE / FALSE**
+`POST /v1/semantic-core`  
+`POST /v1/structure-remap`  
+`POST /v1/synthesize`  
+`POST /v1/evaluate`  
+`POST /v1/refine`
 
-The META Evaluation Layer performs a binary meta-level quality check to ensure that each translation stage maintains semantic fidelity and structural consistency.
-
-Output Types:
-
-YES / NO
-
-TRUE / FALSE
-
-These binary judgments function as a quality gate that determines whether the pipeline should proceed or trigger refinement.
+Full API specification and examples:  
+ 👉 `api/endpoints.md`  
+ 👉 `api/openapi.yml`
 
 ---
 
-## 🧪 Counter-Evidence System
+## **📂 Repository Structure**
 
-Every correction must include evidence lines:
-
-- Structural contradiction  
-- Meaning drift  
-- Lexical misuse  
-- Pragmatic mismatch  
-- Cultural unsuitability  
-
----
-
-## 🔁 Recursive Improvement Engine (ΔS Control)
-
-**Rules:**
-
-- Shorten and strengthen  
-- Remove redundancy  
-- Reduce ΔS (structural entropy)  
-- Stabilize output structure  
-- Re-run META evaluation after refinement  
+`translation-os/`  
+`├── README.md`  
+`├── LICENSE`  
+`├── api/`  
+`│   ├── endpoints.md`  
+`│   ├── openapi.yml`  
+`│   └── examples/`  
+`├── docs/`  
+`│   ├── overview.md`  
+`│   ├── architecture.md`  
+`│   ├── pipeline.md`  
+`│   └── translation_os_core.md`  
+`└── examples/`
 
 ---
 
-## 🌐 API Overview
+## **📜 License**
 
-Translation OS exposes 5 minimal REST endpoints:
-
-POST /v1/semantic-core  
-POST /v1/structure-remap  
-POST /v1/evaluate  
-POST /v1/refine  
-POST /v1/deltaS
-
-
-
-See: `/api/endpoints.md` and `/api/openapi.yml`
+MIT License (recommended for open-source \+ enterprise adoption)
 
 ---
 
-## 📂 Folder Structure
+## **📩 Contact**
 
-```
-translation-os/
-├─ README.md
-├─ docs/
-│ ├─ overview.md
-│ ├─ architecture.md
-│ ├─ pipeline.md
-├─ api/
-│ ├─ endpoints.md
-│ ├─ openapi.yml
-│ └─ examples/
-└─ src/
-└─ translation_os_core/
-```
----
+For enterprise use, PoC inquiries, or collaboration:  
+LinkedIn → **Hideyuki Okabe**
 
-## 📄 License
-
-MIT License (recommended for OSS + enterprise adoption)
-
----
-
-## 📩 Contact
-
-For enterprise use / PoC / collaboration inquiries:  
-LinkedIn: **Hideyuki Okabe**
