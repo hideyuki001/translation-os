@@ -1,0 +1,8 @@
+{
+  "source_text": "The update will roll out next week.",
+  "nucleus": [
+    "future_event",
+    "scheduled_update",
+    "time_reference: next_week"
+  ]
+}
