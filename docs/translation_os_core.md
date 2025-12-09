@@ -15,9 +15,9 @@ This document defines the **core philosophy**, **structural logic**, and **cogni
 
 MT/LLM-based translation often exhibits:
 
-* instability（出力揺れ）
-
-* semantic drift（意味ズレ）
+* instability (output variability)
+  
+* semantic drift (loss of intended meaning)
 
 * surface-level paraphrasing
 
@@ -225,7 +225,8 @@ Reasons:
 
 Thus:
 
-**Culture \= OS外の独立レイヤー（Human × AI 協働）**
+**Culture = an independent layer outside the OS, enabled only through Human × AI collaboration.
+**
 
 This preserves ethical integrity.
 
