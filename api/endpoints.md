@@ -1,4 +1,4 @@
-# **/api/endpoints.md — Translation OS API Endpoints (v1.0)**
+# Translation OS — API Endpoints (v1.0)
 
 **Minimal, deterministic, and structure-first translation API.**
 
