@@ -3,6 +3,8 @@
 A structure-first translation & QA operating system.  
 **Version 1.0 · Designed by Hideyuki Okabe**
 
+⭐ If you find Translation OS useful, please consider giving the repository a star!
+
 ---
 
 ## **🔥 What is Translation OS?**
