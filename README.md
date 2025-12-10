@@ -5,6 +5,8 @@ A structure-first translation & QA operating system.
 
 ⭐ If you find Translation OS useful, please consider giving the repository a star!
 
+Translation OS defines a translation pipeline specification, not a model or service.
+
 ---
 
 ## **🔥 What is Translation OS?**
