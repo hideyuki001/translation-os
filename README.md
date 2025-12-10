@@ -79,6 +79,8 @@ flowchart TD
   P4 -->|YES| P5 --> P6 --> OUT
   P4 -->|NO| P2
 ```
+*A deterministic, structure-first translation pipeline with explicit evaluation gates and human oversight.*
+
 
 Translation OS consists of seven unified layers:
 
