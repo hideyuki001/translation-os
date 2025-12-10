@@ -113,6 +113,7 @@ Translation OS addresses critical failure points in MT and LLM-based translation
 - Supports human-in-the-loop safety by design  
 - Decouples translation quality from model behavior
 
+---
 
 ## **🌐 API Endpoints (v1.0)**
 
