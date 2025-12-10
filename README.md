@@ -62,6 +62,24 @@ For the full theoretical foundation:
 
 ## **🏗 Architecture Overview**
 
+```mermail
+flowchart TD
+  IN[Input<br/>Source text / Constraints / Domain profile]
+
+  P1[Phase 1: Semantic Nucleus<br/>Semantic core extraction]
+  P2[Phase 2: Structural Mapping<br/>Structural template mapping]
+  P3[Phase 3: Draft Synthesis<br/>Draft generation]
+  P4[Phase 4: META Evaluation (YES/NO Gate)<br/>Binary evaluation gate]
+  P5[Phase 5: ΔS Refinement<br/>Structural entropy optimization]
+  P6[Phase 6: Human-in-the-loop<br/>Final human decision]
+
+  OUT[Output<br/>Final translation + Evidence log + ΔS profile]
+
+  IN --> P1 --> P2 --> P3 --> P4
+  P4 -->|YES| P5 --> P6 --> OUT
+  P4 -->|NO| P2
+```
+
 Translation OS consists of seven unified layers:
 
 1. Philosophical Core
