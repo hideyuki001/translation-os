@@ -103,6 +103,17 @@ More details:
 
 ---
 
+## **🎯 Why Translation OS Matters**
+
+Translation OS addresses critical failure points in MT and LLM-based translation workflows:
+
+- Eliminates semantic drift across models and reviewers  
+- Enables reproducible, audit-ready QA  
+- Makes evaluation logic explicit and inspectable  
+- Supports human-in-the-loop safety by design  
+- Decouples translation quality from model behavior
+
+
 ## **🌐 API Endpoints (v1.0)**
 
 Translation OS exposes five minimal REST endpoints:
