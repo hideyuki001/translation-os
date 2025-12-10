@@ -82,21 +82,18 @@ flowchart TD
 *A deterministic, structure-first translation pipeline with explicit evaluation gates and human oversight.*
 
 
-Translation OS consists of seven unified layers:
+### **Architectural Layers (Conceptual)**
 
-1. Philosophical Core
+The pipeline shown above is implemented on top of the following
+conceptual layers:
 
-2. Structural Engine
-
-3. Six-Phase Translation Pipeline
-
-4. Unified Evaluation Matrix
-
-5. Counter-Evidence System
-
-6. Recursive Refinement Engine (ΔS)
-
-7. QA Testing Framework
+- **Philosophical Core** — design principles and epistemic constraints  
+- **Structural Engine** — language-agnostic structural normalization  
+- **Six-Phase Translation Pipeline** — deterministic execution flow  
+- **Unified Evaluation Matrix** — explicit QA and decision logic  
+- **Counter-Evidence System** — failure detection and rejection paths  
+- **Recursive Refinement Engine (ΔS)** — structural stability control  
+- **QA Testing Framework** — reproducibility and validation layer
 
 More details:  
 👉 [docs/architecture.md](docs/architecture.md)  
