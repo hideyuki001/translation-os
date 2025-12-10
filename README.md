@@ -62,6 +62,7 @@ For the full theoretical foundation:
 
 ## **🏗 Architecture Overview**
 
+```mermail
 flowchart TD
   IN["Input<br/>Source text / Constraints / Domain profile"]
 
@@ -77,7 +78,7 @@ flowchart TD
   IN --> P1 --> P2 --> P3 --> P4
   P4 -->|YES| P5 --> P6 --> OUT
   P4 -->|NO| P2
-
+```
 
 Translation OS consists of seven unified layers:
 
