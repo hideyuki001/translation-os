@@ -62,7 +62,7 @@ For the full theoretical foundation:
 
 ## **🏗 Architecture Overview**
 
-```mermail
+```mermaid
 flowchart TD
   IN["Input<br/>Source text / Constraints / Domain profile"]
 
