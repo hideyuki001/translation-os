@@ -161,3 +161,17 @@ MIT License (recommended for open-source \+ enterprise adoption)
 For enterprise use, PoC inquiries, or collaboration:  
 LinkedIn → **Hideyuki Okabe**
 
+## 📄 Resume / Professional Profile
+
+For a detailed overview of my work in AI-translation systems, multimodal evaluation,  
+and OS-level framework design, you can view my full professional resume here:
+
+👉 **https://docs.google.com/document/d/1lhnRh5fFQlPYTGh4yqXJwJAp5ubmelRpRgL7FoPIcfw/edit?usp=sharing**
+
+This document includes:
+
+- Technical background in **Translation OS**, **Unified Cognitive OS**, **SYNAPSE**, and evaluation frameworks  
+- Experience with **LLM-based QA**, **deterministic pipelines**, and **cross-lingual system design**  
+- Industry projects (**Gengo**, **TransPerfect**, **Hansem Global**, etc.)  
+- Research direction and **system architecture philosophy**  
+
